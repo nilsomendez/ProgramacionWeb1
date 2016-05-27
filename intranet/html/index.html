@@ -2,12 +2,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Productos</title>
+		<title>Administrac&oacute;n</title>
 		<link href="../../index/css/estilo.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 			.centrar{
 				text-align:center;
-			}		 	
+			}
+			.izquierda{
+				text-align:left; 			
+			}
 		</style>
 	</head>
 
@@ -19,7 +22,7 @@
 				    <a href="../../index.html"  class="logo"><img src="../../index/imagenes/logotipo.png" width="150" height="120" alt="logo"/></a>
 					<titulodelapagina>
 					    <div align="center">
-					        	<h1>Administraci&oacute;n de Productos</h1>
+					        	<h1> Administraci&oacute;n</h1>
 					    </div>
 				    </titulodelapagina>
 
@@ -35,62 +38,19 @@
 				    </login>
 				</header>
 				
-			   <article class="contenidodelarticulo" id="contenidodelarticulo" align="">
+			   <article class="contenidodelarticulo" id="contenidodelarticulo">
 			    	<table  width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 				    	<td align="center">
-							<div class="titulodelaBusqueda" id="busqueda"> 
-								<form id="centrar" name="busqueda" method='get'>
-							  		<input type="text" placeholder="Busqueda">
-							  		<button type="submit">buscar</button>
-								</form>
-							</div>
 							<div class="tablaconfotos" id="tablaconfotos">
-								<p></p>
-							<table id="center">
-								<tr>
-									<th><a href="">Productos</a></th>
-									<th><a href="insumos.html">Insumos</a></th>
-									<th><a href="herramientas.html">Herramientas</a></th>
-									<th><a href="catalogo.html">Catalogo</a></th>
-								</tr>
+								<p></p><br>
+							<table class="izquierda" border="1" cellspacing="0" width=75%>
+								<tr><th><a href="producto.html">Administraci&oacute;n de los Productos</a></th></tr>
+								<tr><th><a href="insumo.html">Administraci&oacute;n de los Insumos</a></th></tr>
+								<tr><th><a href="herramienta.html">Administraci&oacute;n de los Herramientas</a></th></tr>
+								<tr><th><a href="catalogo.html">Administraci&oacute;n de los Catalogo</a></th></tr>
+								<tr><th><a href="usuarios.html" >Administraci&oacute;n de los Usuarios</a></th></tr>
 							</table>
-							<br>
-	           			<table width="80%" border="1" cellspacing="0" cellpadding="1">
-		           			<tbody>
-									<tr >
-										<th>Nombre</td>
-										<th>Descripcion</td>
-										<th>Imagen</th>
-									</tr>
-									<tr>
-										<td>Mesa</td>
-										<td>sin descripcion...</td>
-										<td>imagenes/mesa.png</td>
-										<td>
-											<a href="javascript:void(0)" onclick="window.open('../negocio/mproducto.html','','width=150px,height=50%,noresize')">
-											<button>Modificar</button></a>
-										</td>
-										<td><button>Borrar</button></td>
-									</tr>
-									<tr>
-										<td>Silla</td>
-										<td>sin descripcion...</td>
-										<td>imagenes/silla.png</td>
-										<td><button>Modificar</button></td>
-										<td><button>Borrar</button></td>
-									</tr>
-									<tr>
-										<td>Estante</td>
-										<td>sin descripcion...</td>
-										<td>imagenes/estante.png</td>
-										<td><button>Modificar</button></td>
-										<td><button>Borrar</button></td>
-									</tr>
-								</tbody>
-							</table>
-							<p>
-								<a href="javascript:void(0)" onclick="window.open('../negocio/cproducto.html','','width=75%,height=50%,noresize')"><button>Crear</button></a>
-							</p>
+							<br><p></p>
 						</td>
 					</table>
 					<div class="piepagina" >DERECHOS RESERVADOS UDC 2016</div>

@@ -23,50 +23,23 @@
     
     
     </titulodelapagina>
-
-
-
-  
-    <login><center>
-    <!--formulario de login que ya tiene el efecto-->  
-  <form  action="../intranet/index.html" method="post">
-  <fieldset>
-   
-    <legend></legend>   <!--este es el titulo en donde esta en el grupo-->
-    
-        <!--los divido en contendor para poder manipular con css--> 
-        <div>                 
-         <label for="nombre">Nombre</label> 
-       <input type="text" id="nombre" />
-    </div>
-        
-    <div>
-      <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" />
-     </div>
-          <div>
-
-                  <p>
-                    <input class="boton" type="submit" value="INGRESAR" />
-                  </p>
-                  <p></p>
-          </div>
-</fieldset>
-</form>
-</center>
-<!--termina el formulario-->        
-    </login>
-
-   <div id="menu" align="center"> 
-      <p> <a href="../extranet/catalogo.html">CATALOGO</a> |<a href="../index.html">HOME</a>
-</p>
+	<login>
+		<!-- se regresa a la pagina inicial si se cierra la sesion -->
+		<form action="../index.html"> 
+			<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
+				<legend>Sesion</legend>		<!--este es el titulo en donde esta en el grupo-->								
+				<div class="comments">Usuario: pepe</div>
+				<input type="submit" value="Cerrar Sesion">
+			</fieldset>
+		</form>     
+	</login>
   </header>
 
 <!---seccion donde se modificara su contenido-->
   <article class="contenidodelarticulo" id="contenidodelarticulo" align="">
     
     <div class="titulodelaBusqueda" id="busqueda"> MESAS </div>
-    <p></p>
+    <div class="izquierda"><a href="catalogo.html">catalogo</a> -> <a href="" >mesa</a></div>
     <!--declaro un contenedor donde estara las tablas dentro sirve para dar color a traves de css-->    
       <div class="tablaconfotos" id="tablaconfotos">
     <!--tabla donde se inciia para modelar fotos-->
