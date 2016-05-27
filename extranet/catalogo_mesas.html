@@ -1,0 +1,107 @@
+
+    
+ <!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Catálogo de mesas</title>
+<link href="../index/css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--Incio de contenido de la pagina principal-->
+<div class="etiquetaGenral">
+<!--encabezado de la pagina que html5 trae header tendra su estilo que esta en css-->
+  <header>
+    <a href="../index.html"  class="logo"><img src="../index/imagenes/logotipo.png" width="150" height="120" alt=""/></a>
+   
+   <titulodelapagina>
+  
+    <div align="center">
+  <h2> SISTEMA DE CONTROL DE STOCK </h2>
+    </div>
+      
+    
+    
+    </titulodelapagina>
+
+
+
+  
+    <login><center>
+    <!--formulario de login que ya tiene el efecto-->  
+  <form  action="../intranet/index.html" method="post">
+  <fieldset>
+   
+    <legend></legend>   <!--este es el titulo en donde esta en el grupo-->
+    
+        <!--los divido en contendor para poder manipular con css--> 
+        <div>                 
+         <label for="nombre">Nombre</label> 
+       <input type="text" id="nombre" />
+    </div>
+        
+    <div>
+      <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" />
+     </div>
+          <div>
+
+                  <p>
+                    <input class="boton" type="submit" value="INGRESAR" />
+                  </p>
+                  <p></p>
+          </div>
+</fieldset>
+</form>
+</center>
+<!--termina el formulario-->        
+    </login>
+
+   <div id="menu" align="center"> 
+      <p> <a href="../extranet/catalogo.html">CATALOGO</a> |<a href="../index.html">HOME</a>
+</p>
+  </header>
+
+<!---seccion donde se modificara su contenido-->
+  <article class="contenidodelarticulo" id="contenidodelarticulo" align="">
+    
+    <div class="titulodelaBusqueda" id="busqueda"> MESAS </div>
+    <p></p>
+    <!--declaro un contenedor donde estara las tablas dentro sirve para dar color a traves de css-->    
+      <div class="tablaconfotos" id="tablaconfotos">
+    <!--tabla donde se inciia para modelar fotos-->
+    
+    
+    <!--tabla donde se inciia para modelar fotos-->
+   <table width="200" heigth="200" border="1" align="" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td style="text-align: center"><p><img src="../internet/imagenes/mesa.jpg" width="200">
+              <div id="botonderecho" >
+              <form action="catalogo_maceteros.html">
+                  <input  type="submit"  value="<-----" /> </form>
+               <form action="catalogo_sillas.html">
+                  <input class="boton" type="submit" value="----->" /> </form>
+              </div>
+
+              <p>
+                    <input type="submit" value="Ingresar comentario" method="post"/>
+                   <form><input type="text" size="50"  name="comentario" value="Escriba acá su comentario"><br></form>
+              </p>
+              </p>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+    
+       </div>
+      <p>-</p>
+
+  </article>
+  <!--termina el cuerpo del articulo -->
+</div>
+<!--se declara el contenedor para pie de pagina-->
+<div class="piepagina" id="piepagina" align="center">DERECHOS RESERVADOS UDC 2016</div>
+
+</body>
+</html>

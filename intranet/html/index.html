@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Productos</title>
+		<link href="../../index/css/estilo.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			.centrar{
+				text-align:center;
+			}		 	
+		</style>
+	</head>
+
+	<body class="centrar">
+			<div class="etiquetaGenral" >
+			<!--encabezado de la pagina que html5 trae header tendra su estilo que esta en css-->
+			
+				<header>
+				    <a href="../../index.html"  class="logo"><img src="../../index/imagenes/logotipo.png" width="150" height="120" alt="logo"/></a>
+					<titulodelapagina>
+					    <div align="center">
+					        	<h1>Administraci&oacute;n de Productos</h1>
+					    </div>
+				    </titulodelapagina>
+
+					<login>
+						<!-- se regresa a la pagina inicial si se cierra la sesion -->
+						<form action="../../index.html"> 
+							<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
+						  		<legend>Sesion</legend>		<!--este es el titulo en donde esta en el grupo-->								
+								  	 <div class="comments">Usuario: Admin</div>
+								  	 <input type="submit" value="Cerrar Sesion">
+							</fieldset>
+						</form>     
+				    </login>
+				</header>
+				
+			   <article class="contenidodelarticulo" id="contenidodelarticulo" align="">
+			    	<table  width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+				    	<td align="center">
+							<div class="titulodelaBusqueda" id="busqueda"> 
+								<form id="centrar" name="busqueda" method='get'>
+							  		<input type="text" placeholder="Busqueda">
+							  		<button type="submit">buscar</button>
+								</form>
+							</div>
+							<div class="tablaconfotos" id="tablaconfotos">
+								<p></p>
+							<table id="center">
+								<tr>
+									<th><a href="">Productos</a></th>
+									<th><a href="insumos.html">Insumos</a></th>
+									<th><a href="herramientas.html">Herramientas</a></th>
+									<th><a href="catalogo.html">Catalogo</a></th>
+								</tr>
+							</table>
+							<br>
+	           			<table width="80%" border="1" cellspacing="0" cellpadding="1">
+		           			<tbody>
+									<tr >
+										<th>Nombre</td>
+										<th>Descripcion</td>
+										<th>Imagen</th>
+									</tr>
+									<tr>
+										<td>Mesa</td>
+										<td>sin descripcion...</td>
+										<td>imagenes/mesa.png</td>
+										<td>
+											<a href="javascript:void(0)" onclick="window.open('../negocio/mproducto.html','','width=150px,height=50%,noresize')">
+											<button>Modificar</button></a>
+										</td>
+										<td><button>Borrar</button></td>
+									</tr>
+									<tr>
+										<td>Silla</td>
+										<td>sin descripcion...</td>
+										<td>imagenes/silla.png</td>
+										<td><button>Modificar</button></td>
+										<td><button>Borrar</button></td>
+									</tr>
+									<tr>
+										<td>Estante</td>
+										<td>sin descripcion...</td>
+										<td>imagenes/estante.png</td>
+										<td><button>Modificar</button></td>
+										<td><button>Borrar</button></td>
+									</tr>
+								</tbody>
+							</table>
+							<p>
+								<a href="javascript:void(0)" onclick="window.open('../negocio/cproducto.html','','width=75%,height=50%,noresize')"><button>Crear</button></a>
+							</p>
+						</td>
+					</table>
+					<div class="piepagina" >DERECHOS RESERVADOS UDC 2016</div>
+				</article>
+
+			</div>
+	</body>
+</html>
