@@ -108,3 +108,11 @@ div#tablaconfotos{
 	font-style: normal;
 	font-size: 20px;
 }
+
+.centrar{
+	text-align:center;
+}
+
+.izquierda{
+	text-align:left; 			
+}

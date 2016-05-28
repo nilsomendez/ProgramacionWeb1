@@ -4,14 +4,6 @@
 		<meta charset="UTF-8">
 		<title>Insumos</title>
 		<link href="../../index/css/estilo.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			.centrar{
-				text-align:center;
-			}
-			.izquierda{
-				text-align:left; 			
-			}	
-		</style>
 	</head>
 
 	<body class="centrar">
@@ -66,9 +58,9 @@
                 					<td class="centrar">5</td>
 										<td>imagenes/madera.png</td>
 										<td>
-											<a href="javascript:void(0)" onclick="window.open('../negocio/minsumo.html','','width=25%,height=25%,noresize')">
-												<button>Modificar</button>
-											</a>
+											<form action="../negocio/minsumo.html"> 					
+												<input type="submit" value="Modificar">
+											</form>
 										</td>
 										<td><button>Borrar</button></td>
 									</tr>
@@ -91,7 +83,9 @@
 								</tbody>
 							</table>
 							<p>
-								<a href="javascript:void(0)" onclick="window.open('../negocio/cinsumo.html','','width=75%,height=50%,noresize')"><button>Crear</button></a>
+								<form action="../negocio/cinsumo.html"> 					
+									<input type="submit" value="Crear">
+								</form>
 							</p>
 						</td>
 					</table>

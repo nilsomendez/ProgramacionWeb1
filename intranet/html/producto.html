@@ -4,14 +4,6 @@
 		<meta charset="UTF-8">
 		<title>Productos</title>
 		<link href="../../index/css/estilo.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			.centrar{
-				text-align:center;
-			}
-			.izquierda{
-				text-align:left; 			
-			}	 	
-		</style>
 	</head>
 
 	<body class="centrar">
@@ -63,8 +55,9 @@
 										<td>sin descripcion...</td>
 										<td>imagenes/mesa.png</td>
 										<td>
-											<a href="javascript:void(0)" onclick="window.open('../negocio/mproducto.html','','width=150px,height=50%,noresize')">
-											<button>Modificar</button></a>
+											<form action="../negocio/mproducto.html"> 					
+												<input type="submit" value="Modificar">
+											</form>
 										</td>
 										<td><button>Borrar</button></td>
 									</tr>
@@ -85,7 +78,9 @@
 								</tbody>
 							</table>
 							<p>
-								<a href="javascript:void(0)" onclick="window.open('../negocio/cproducto.html','','width=75%,height=50%,noresize')"><button>Crear</button></a>
+								<form action="../negocio/cproducto.html"> 					
+									<input type="submit" value="Crear">
+								</form>
 							</p>
 						</td>
 					</table>

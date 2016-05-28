@@ -2,23 +2,28 @@
 <html>
 
 <head>
-	<title>producto</title>
+	<title>modificar herramienta</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+</script>
 </head>
 
 <body>
     <fieldset>
-        <legend>Creacion de Producto</legend>
+        <legend>Modificar Herramienta</legend>
         <table>
             <form action="../index.html">
                 <tr>
-                    <td><label>Nombre de Producto</label></td>
-                    <td><input name="Nombre" type="text"><br></td>
+                    <td><label>Nombre de Herramienta</label></td>
+                    <td><input name="Nombre" type="text" value="Cerrucho"><br></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td>  <input name="Descripcion" type="text"><br></td>
+                    <td>  <input name="Descripcion" type="text" value="sin descripcion..."></td>
+                </tr>
+                <tr>
+                    <td><label>Cantidad</label></td>
+                    <td> <input name="Cantidad" type="text" value="4" ></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>

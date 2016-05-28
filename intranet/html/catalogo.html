@@ -4,14 +4,6 @@
 		<meta charset="UTF-8">
 		<title>Catalogo</title>
 		<link href="../../index/css/estilo.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			.centrar{
-				text-align:center;
-			}
-			.izquierda{
-				text-align:left; 			
-			}	
-		</style>
 	</head>
 
 	<body class="centrar">
@@ -71,9 +63,9 @@
 										<td>Madera de &Aacute;lamo</td>
 										<td>imagenes/mesa-12-10-2017.png</td>
 										<td>
-											<a href="javascript:void(0)" onclick="window.open('../negocio/mpost.html','','width=25%,height=25%,noresize')">
-												<button>Modificar</button>
-											</a>
+											<form action="../negocio/mpost.html"> 					
+												<input type="submit" value="Modificar">
+											</form>
 										</td>
 										<td><button>Borrar</button></td>
 									</tr>
@@ -94,7 +86,9 @@
 								</tbody>
 							</table>
 							<p>
-								<a href="javascript:void(0)" onclick="window.open('../negocio/cpost.html','','width=75%,height=50%,noresize')"><button>Crear</button></a>
+								<form action="../negocio/cpost.html"> 					
+									<input type="submit" value="Crear">
+								</form>
 							</p>
 						</td>
 					</table>

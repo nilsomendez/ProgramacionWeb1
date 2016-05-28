@@ -1,49 +1,46 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Pagina Principal</title>
-<link href="index/css/estilo.css" rel="stylesheet" type="text/css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pagina Principal</title>
+    <link href="index/css/estilo.css" rel="stylesheet" type="text/css">
+    <script language="JavaScript" src="index/validacion.js"></script>
+  </head>
 <body><center>
 <!--Incio de contenido de la pagina principal-->
 <div class="etiquetaGenral">
 <!--encabezado de la pagina que html5 trae header tendra su estilo que esta en css-->
   <header>
     <a href="index.html"  class="logo"><img src="index/imagenes/logotipo.png" width="150" height="120" alt=""/></a>
-   
    <titulodelapagina>
-	
     <div align="center">
-
-	<h2> SISTEMA DE CONTROL DE STOCK </h2>
-    
-</div>
-    </titulodelapagina>
+	     <h2> SISTEMA DE CONTROL DE STOCK </h2>
+    </div>
+   </titulodelapagina>
     
    
     <login><center>
     <!--formulario de login que ya tiene el efecto-->  
-	<form action="intranet/html/index.html" method="post">
-	<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
-  			
-        <!--los divido en contendor para poder manipular con css-->	
+  	<form action="../intranet/html/index.html" name="myForm" onsubmit="return validateForm()" method="post">
+    	<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
+      			
+            <!--los divido en contendor para poder manipular con css-->	
         <div>									
-		  	 <label for="nombre">Nombre</label>	
- 			 <input type="text" id="nombre" />
- 		</div>
- 		<div>
- 		 	<label for="contrasena">Contraseña</label>
-  			<input type="password" id="contrasena" />
-		 </div>
-		   		<div>
-                  <p>
-                    <input class="boton" type="submit" value="INGRESAR" />
-                  </p>
-                  <p></p>
-		   		</div>
-</fieldset>
-</form>
+    		  <label for="nombre">Nombre</label>	
+     			<input type="text" name="fname" id="nombre" />
+     		</div>
+     		<div>
+     		 	<label for="contrasena">Contraseña</label>
+      		<input type="password" id="contrasena" />
+    		</div>
+    		<div>
+          <p>
+            <input class="boton" type="submit" value="INGRESAR" />
+          </p>
+          <p></p>
+    		</div>
+    </fieldset>
+  </form>
 </center>
 <!--termina el formulario-->	      
     </login>
