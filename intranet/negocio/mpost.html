@@ -10,22 +10,23 @@
 <body>
     <fieldset>
         <legend>Modificar Post</legend>
-        <table>
+        <form name="post" action="../html/catalogo.html">
+            <table>
                 <tr>
                     <td><label>Nombre de Post</label></td>
-                    <td><input name="Nombre" type="text" value="Mesa redonda" ><br></td>
+                    <td><input required name="Nombre" type="text" value="Mesa redonda" ><br></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td> <input width="50"  name="Descripcion" type="text" value="Madera de Álamo" size="50"></td>
+                    <td> <input required width="50"  name="Descripcion" type="text" value="Madera de Álamo" size="50"></td>
                 </tr>
                 <tr>
                     <td> <label>Grupo de Trabajo</label></td>
-                    <td> <input width="50"  name="Descripcion" type="text" value="fulano, fulana, mengano" size="50"></td>
+                    <td> <input required width="50"  name="Descripcion" type="text" value="fulano, fulana, mengano" size="50"></td>
                 </tr>
                 <tr>
                     <td><label>Archivos adjuntos</label></td>
-                    <td><input name="Subir Archivos" type="file" /></td>
+                    <td><input required name="Subir Archivos" type="file" /></td>
                 </tr>
                 <tr>
                 	<td>Comentarios: </td>
@@ -36,10 +37,11 @@
                 <tr>
                 	<td><FONT SIZE=2 FACE="courier">Podria ser mejor...</FONT><button>Eliminar</button><button>Responder</button></td>
                 </tr>               
-        </table>
+            </table>
+            <button onclick="goBack()">Cancelar</button>
+            <input type="submit" value="Guardar">
+        </form>
     </fieldset>
-    <button onclick="goBack()">Guardar</button>
-    <button onclick="goBack()">Cancelar</button>
 </body>
 
 </html>

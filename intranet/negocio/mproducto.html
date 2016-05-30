@@ -10,26 +10,25 @@
 <body>
     <fieldset>
         <legend>Modificaci&oacute;n de Producto</legend>
-        <table>
-            <form action="../index.html">
+        <form name="producto" action="../html/producto.html">
+            <table>
                 <tr>
                     <td><label>Nombre de Producto</label></td>
-                    <td><input name="Nombre" type="text"  value="Mesa"><br></td>
+                    <td><input required name="nombre" type="text"  value="Mesa"><br></td>
                 </tr>
                 <tr>
-                    <td> <label>Descripci&oacute;n</label></td>
-                    <td>  <input name="Descripcion" type="text" value="sin descripcion.."><br></td>
+                    <td><label>Descripci&oacute;n</label></td>
+                    <td><input required name="descripcion" type="text" value="sin descripcion.."><br></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>
-                    <td><input name="Subir Archivo" type="file"/></td>
+                    <td><input required name="Subir Archivo" type="file"/></td>
                 </tr>
-            </form>
-        </table>
+            </table>
+             <button onclick="goBack()">Cancelar</button>
+            <input type="submit" value="Guardar" >
+        </form>
     </fieldset>
-    <button onclick="goBack()">Guardar</button>
-    <button onclick="goBack()">Cancelar</button>
-
 </body>
 
 </html>

@@ -10,27 +10,29 @@
 <body>
     <fieldset>
         <legend>Crear Post</legend>
-        <table>
+        <form name="post" action="../html/catalogo.html">
+            <table>
                 <tr>
                     <td><label>Nombre de Post</label></td>
-                    <td><input name="Nombre" type="text"><br></td>
+                    <td><input required name="nombre" type="text"><br></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td> <input width="50"  name="Descripcion" type="text" size="50"></td>
+                    <td> <input required width="50" name="Descripcion" type="text" size="50"></td>
                 </tr>
                 <tr>
                     <td> <label>Grupo de Trabajo</label></td>
-                    <td> <input width="50"  name="Descripcion" type="text" size="50"></td>
+                    <td> <input required width="50"  name="Descripcion" type="text" size="50"></td>
                 </tr>
                 <tr>
                     <td><label>Archivos adjuntos</label></td>
-                    <td><input name="Subir Archivos" type="file" /></td>
+                    <td><input required name="Subir Archivos" type="file" /></td>
                 </tr>
-        </table>
+            </table>
+            <button onclick="goBack()">Cancelar</button>
+            <input type="submit" value="Guardar" >
+        </form>
     </fieldset>
-    <button onclick="goBack()">Guardar</button>
-    <button onclick="goBack()">Cancelar</button>
 </body>
 
 </html>

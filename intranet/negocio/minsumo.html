@@ -10,29 +10,29 @@
 <body>
     <fieldset>
         <legend>Modificar Insumo</legend>
-        <table>
-            <form action="../index.html">
+        <form name="insumo" action="../html/insumo.html">
+            <table>
                 <tr>
                     <td><label>Nombre de Insumo</label></td>
-                    <td><input name="Nombre" type="text" value="Madera"><br></td>
+                    <td><input required name="nombre" type="text" value="Madera"><br></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td>  <input name="Descripcion" type="text" value="Alamo"></td>
+                    <td>  <input required name="descripcion" type="text" value="Alamo"></td>
                 </tr>
                 <tr>
                     <td><label>Cantidad</label></td>
-                    <td> <input name="Cantidad" type="text" value="5" ></td>
+                    <td> <input required name="cantidad" type="number" value="5" ></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>
-                    <td><input name="Subir Archivo" type="file" /></td>
+                    <td><input required name="Subir Archivo" type="file" /></td>
                 </tr>
-            </form>
-        </table>
+            </table>
+            <button onclick="goBack()">Cancelar</button>
+            <input type="submit" value="Guardar" >
+        </form>
     </fieldset>
-    <button onclick="goBack()">Guardar</button>
-    <button onclick="goBack()">Cancelar</button>
 </body>
 
 </html>

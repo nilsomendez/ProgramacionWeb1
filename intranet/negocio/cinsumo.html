@@ -10,29 +10,30 @@
 <body>
     <fieldset>
         <legend>Dar de alta Insumo</legend>
-        <table>
-            <form action="../index.html">
+        <form action="../index.html">
+            <table>
                 <tr>
                     <td><label>Nombre de Insumo</label></td>
-                    <td><input name="Nombre" type="text"><br></td>
+                    <td><input required name="Nombre" type="text"><br></td>
                 </tr>
                 <tr>
-                    <td> <label>Descripci&oacute;n</label></td>
-                    <td>  <input name="Descripcion" type="text"></td>
+                    <td><label>Descripci&oacute;n</label></td>
+                    <td><input name="Descripcion" type="text"></td>
                 </tr>
                 <tr>
                     <td><label>Cantidad</label></td>
-                    <td> <input name="Cantidad" type="text"></td>
+                    <td><input required name="Cantidad" type="number"></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>
-                    <td><input name="Subir Archivo" type="file" /></td>
+                    <td><input required name="Subir Archivo" type="file" /></td>
                 </tr>
-            </form>
-        </table>
+            </table>
+            <button onclick="goBack()">Cancelar</button>
+            <input type="submit" value="Guardar">
+        </form>
     </fieldset>
-    <button onclick="goBack()">Guardar</button>
-    <button onclick="goBack()">Cancelar</button>
+
 </body>
 
 </html>
