@@ -1,0 +1,29 @@
+function goBack() {
+	window.history.go(-1);
+}
+
+function validacionUsuario() {
+	var nombre = document.usuario.nombre;
+	var email = document.usuario.email;
+	var expreg = new RegExp("^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$");
+	var enviar = true;
+	if (nombre == "") {
+		var texto = "Es obligatorio introducir el nombre.<br/>"  //variable con el mensaje
+      aviso.innerHTML += texto; 
+      enviar = false;
+	} else if (!expreg.test(email)) {
+		var texto = "Es obligatorio introducir el email.<br/>"  //variable con el mensaje
+      aviso.innerHTML += texto; 
+      enviar = false;
+	}
+	return enviar
+	
+}
+
+function guardado(){
+	alert("Guardado...");
+}
+
+function modificado() {
+	alert("Modificado...");
+}

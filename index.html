@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Pagina Principal</title>
     <link href="index/css/estilo.css" rel="stylesheet" type="text/css">
-    <script language="JavaScript" src="index/validacion.js"></script>
+    <script language="JavaScript" src="index/js/validacion.js"></script>
   </head>
 <body><center>
 <!--Incio de contenido de la pagina principal-->
@@ -21,26 +21,25 @@
    
     <login><center>
     <!--formulario de login que ya tiene el efecto-->  
-  	<form action="../intranet/html/index.html" name="myForm" onsubmit="return validateForm()" method="post">
+  	<form action="intranet/html/index.html" name="login" onsubmit="return comprobar()" method="post">
     	<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
-      			
-            <!--los divido en contendor para poder manipular con css-->	
-        <div>									
-    		  <label for="nombre">Nombre</label>	
-     			<input type="text" name="fname" id="nombre" />
-     		</div>
-     		<div>
-     		 	<label for="contrasena">Contraseña</label>
-      		<input type="password" id="contrasena" />
-    		</div>
-    		<div>
-          <p>
-            <input class="boton" type="submit" value="INGRESAR" />
-          </p>
-          <p></p>
-    		</div>
-    </fieldset>
-  </form>
+      	<div>									
+				<label for="nombre">Nombre</label>	
+				<input name="nombre" type="text" id="nombre" onfocus="restaurar()"/>
+ 			</div>
+ 			<div>
+ 		 		<label for="contrasena">Contraseña</label>
+  				<input name="password" type="password" id="contrasena" onfocus="restaurar()" />
+			</div>
+			<div>
+				<p>
+					<input type="submit" value="ingresar" >                              
+				</p>
+				<p></p>
+			</div>
+			<p id="aviso"></p>
+		</fieldset>
+	</form>
 </center>
 <!--termina el formulario-->	      
     </login>
