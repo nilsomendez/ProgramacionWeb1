@@ -10,7 +10,7 @@
 <body>
     <fieldset>
         <legend>Crear Post</legend>
-        <form name="post" action="../html/catalogo.html">
+        <form name="f_post" onsubmit="guardado();" action="../html/catalogo.html">
             <table>
                 <tr>
                     <td><label>Nombre de Post</label></td>
@@ -29,7 +29,7 @@
                     <td><input required name="Subir Archivos" type="file" /></td>
                 </tr>
             </table>
-            <button onclick="goBack()">Cancelar</button>
+            <button onclick="confirmar();">Cancelar</button>
             <input type="submit" value="Guardar" >
         </form>
     </fieldset>

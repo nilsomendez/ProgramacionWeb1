@@ -10,7 +10,7 @@
 <body>
     <fieldset>
         <legend>Dar de alta Insumo</legend>
-        <form action="../index.html">
+        <form name="f_insumo" onsubmit="guardado();" action="../html/catalogo.html">
             <table>
                 <tr>
                     <td><label>Nombre de Insumo</label></td>
@@ -22,14 +22,14 @@
                 </tr>
                 <tr>
                     <td><label>Cantidad</label></td>
-                    <td><input required name="Cantidad" type="number"></td>
+                    <td><input id="avisoNumero" required name="Cantidad" type="number" min="1"></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>
                     <td><input required name="Subir Archivo" type="file" /></td>
                 </tr>
             </table>
-            <button onclick="goBack()">Cancelar</button>
+            <button onclick="confirmar();">Cancelar</button>
             <input type="submit" value="Guardar">
         </form>
     </fieldset>
