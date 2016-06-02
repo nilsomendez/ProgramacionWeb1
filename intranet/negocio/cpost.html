@@ -6,9 +6,11 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
     <script type="text/javascript">
-        function validacaion( nombre, grupo ){
-            if ( !is_cadena(nombre) || !is_cadena(grupo) ) { return false}
-            else return true;
+        function validacion( ){
+            var nombre = document.f_post.nombre.value;
+            var descripcion = document.f_post.descripcion.value;
+            if ( !is_cadena_sin_numero(nombre) || !is_cadena_sin_numero(descripcion) ) { return false}
+            return true;
         }
     </script>
 </head>
@@ -16,15 +18,15 @@
 <body>
     <fieldset>
         <legend>Crear Post</legend>
-        <form name="f_post" onsubmit="validacaion(document.f_post.nombre, document.f_post.descripcion)" action="../html/catalogo.html">
+        <form name="f_post" method="post" onsubmit="return validacion()" action="../html/catalogo.html">
             <table>
                 <tr>
                     <td><label>Nombre de Post</label></td>
-                    <td><input required name="nombre" type="text"><br></td>
+                    <td><input name="nombre" type="text"><br></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td> <input required width="50" name="descripcion" type="text" size="50"></td>
+                    <td> <input width="50" name="descripcion" type="text" size="50"></td>
                 </tr>
                 <tr>
                     <td> <label>Grupo de Trabajo</label></td>

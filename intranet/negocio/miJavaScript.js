@@ -28,10 +28,13 @@ function is_numero_positivo(num){
 	return true;
 }
 
-function is_cadena(cad){
-	if (isNaN(cad)) {
-		return false;
-	}
+function is_cadena_sin_numero(cad){
+	var numero = "1234567890"
+	for (var i = cad.length - 1; i >= 0; i--) {
+		if (numero.indexOf(cad.charAt(i)) != -1) {
+			return false;
+		};
+	};
 	return true;
 }
 
