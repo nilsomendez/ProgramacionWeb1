@@ -17,20 +17,24 @@ function confirmar()
     }
 }
 
-function validar_numero_positico(num){
-	var aviso = document.getElementById("avisoNumero");
-	aviso.innerHTML = ""
+function is_numero_positivo(num){
 	if (!isNaN(num)) {
-		aviso.innerHTML = "ingrese un numero";
 		return false;
 	} else {
 		if(parseInt(num) <= 0){
-			aviso.innerHTML = "ingrese un numero mayor a CERO"
 			return false;
 		}
 	}
 	return true;
 }
+
+function is_cadena(cad){
+	if (isNaN(cad)) {
+		return false;
+	}
+	return true;
+}
+
 
 
  //   isNaN(15) devolverá falso
