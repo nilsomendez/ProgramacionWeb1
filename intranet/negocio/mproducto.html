@@ -5,12 +5,26 @@
 	<title>producto</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+    <script type="text/javascript">
+        function validacion( ){
+            var nombre = document.f_insumo.nombre.value;
+            var descripcion = document.f_insumo.descripcion.value;
+            var insumos = document.f_insumo.insumos.value;
+            var herramientas = document.f_insumo.herramientas.value;
+
+            if ( !isNaN(nombre) || !isNaN(descripcion) ||
+                !isNaN(insumos) || !isNaN(herramientas)) 
+                { return false; }
+            return true;
+        }
+    </script>
+
 </head>
 
 <body>
     <fieldset>
         <legend>Modificaci&oacute;n de Producto</legend>
-        <form name="producto" action="../html/producto.html">
+        <form name="f_producto" method="post" onsubmit="return validacion();" action="../html/producto.html">
             <table>
                 <tr>
                     <td><label>Nombre de Producto</label></td>
@@ -21,11 +35,19 @@
                     <td><input required name="descripcion" type="text" value="sin descripcion.."><br></td>
                 </tr>
                 <tr>
+                    <td><label>Insumos</label></td>
+                    <td><input required name="insumos" type="text" value="madera; 12 clavos; cola;"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Herramientas</label></td>
+                    <td><input required name="herramientas" type="text" value="martillo; serrucho; escuadra;"><br></td>
+                </tr>
+                <tr>
                     <td><label>Foto</label></td>
                     <td><input required name="Subir Archivo" type="file"/></td>
                 </tr>
             </table>
-             <button onclick="goBack()">Cancelar</button>
+             <button onclick="confirmar()">Cancelar</button>
             <input type="submit" value="Guardar" >
         </form>
     </fieldset>

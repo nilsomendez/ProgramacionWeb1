@@ -10,22 +10,21 @@ function comprobar() {
             var texto = "Es obligatorio introducir el nombre.<br/>"  //variable con el mensaje
             aviso.innerHTML += texto //ahora el mensaje lo guardamos en el aviso donde se mostrara en la pantalla
             enviar = "no"			//enviar cambiamos con no
-            } else if (password.value == "" || password.value.indexOf(" ") == 0 ) {
+         } else if (password.value == "" || password.value.indexOf(" ") == 0 ) {
             var texto = "Es obligatorio introducir el password.<br/>"  
             aviso.innerHTML += texto
             enviar = "no"
-            } else if (nombre.value == "admin" && password.value=="123") {  //si el nombre y password es correcto
-			alert("Bienvenido al sistema");								//mensaje de bienvenida
+         } else if (nombre.value == "admin" && password.value=="123") {  //si el nombre y password es correcto
+			   alert("Bienvenido al sistema");								//mensaje de bienvenida
 			}else{														//caso contrario
-			var texto = "usuario o contraseña incorrecto <br/>"			//error de usuario y el password
-				aviso.innerHTML += texto
+			   var texto = "usuario o contraseña incorrecto <br/>"			//error de usuario y el password
+			   aviso.innerHTML += texto
 				enviar="no"
 			}
-	
-			
-         if (enviar == "no") {return false}								//si la variable enviar contiene no retorna faso
-
-         }
+         if (enviar == "no") {
+            return false
+         }//si la variable enviar contiene no retorna faso
+}
 
 
 

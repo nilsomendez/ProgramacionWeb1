@@ -5,23 +5,47 @@
 	<title>Post</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+    <script type="text/javascript">
+        function validacion(){
+            var n_usuario = document.f_usuario.n_usuario.value;
+            var nombre = document.f_usuario.nombre.value;
+            var apellido = document.f_usuario.apellido.value;
+
+            if (!is_cadena_sin_numero(nombre) || !isNaN(n_usuario) ||
+                !is_cadena_sin_numero(apellido) )
+                { return false; }
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <fieldset>
         <legend>Crear Usuario</legend>
-        <form name="usuario" action="../html/usuarios.html">
+        <form name="f_usuario" method="post" onsubmit="return validacion();" action="../html/usuarios.html">
         	<table>
                 <tr>
+                    <td><label>Nombre</label></td>
+                    <td><input required name="nombre" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Apellido</label></td>
+                    <td><input required name="apellido" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Fecha Nacimiento</label></td>
+                    <td><input required type="datetime" name="f_nacimiento" ></td>
+                </tr>
+                <tr>
                     <td><label>Nombre de Usuario</label></td>
-                    <td><input required name="nombre" type="text"><br></td>
+                    <td><input required name="n_usuario" type="text"></td>
                 </tr>
                 <tr>
                     <td> <label>Correo</label></td>
                     <td> <input required type="email" name="email" type="text"></td>
                 </tr>
         	</table>
-        	<button onclick="goBack()">Cancelar</button>
+        	<button onclick="confirmar()">Cancelar</button>
             <input type="submit" value="Guardar" >
         </form>
     </fieldset>

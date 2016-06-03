@@ -5,24 +5,33 @@
 	<title>alta insumos</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+    <script type="text/javascript">
+        function validacion(){
+            var nombre = document.f_insumo.nombre.value;
+            var descripcion = document.f_insumo.descripcion.value;
+            if(!isNaN(nombre) || !isNaN(descripcion))
+                { return false; }
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <fieldset>
         <legend>Dar de alta Insumo</legend>
-        <form name="f_insumo" onsubmit="guardado();" action="../html/catalogo.html">
+        <form name="f_insumo" method="post" onsubmit="return validacion();" action="../html/insumo.html">
             <table>
                 <tr>
                     <td><label>Nombre de Insumo</label></td>
-                    <td><input required name="Nombre" type="text"><br></td>
+                    <td><input required name="nombre" type="text"><br></td>
                 </tr>
                 <tr>
                     <td><label>Descripci&oacute;n</label></td>
-                    <td><input name="Descripcion" type="text"></td>
+                    <td><input required name="descripcion" type="text"></td>
                 </tr>
                 <tr>
                     <td><label>Cantidad</label></td>
-                    <td><input id="avisoNumero" required name="Cantidad" type="number" min="1"></td>
+                    <td><input required name="cantidad" type="number" min="1"></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>

@@ -5,27 +5,47 @@
 	<title>producto</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+    <script type="text/javascript">
+        function validacion(){
+            var nombre = document.f_producto.nombre.value;
+            var descripcion = document.f_producto.descripcion.value;
+            var herramientas = document.f_producto.l_herramientas.value;
+            var insumos = document.f_producto.l_insumos.value;
+            if (!isNaN(nombre) || !isNaN(descripcion) ||
+                !isNaN(herramientas) || !isNaN(insumos)) 
+                {return false;}
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <fieldset>
         <legend>Creacion de Producto</legend>
-        <form action="../html/producto.html">
+        <form name="f_producto" method="post" onsubmit="return validacion();" action="../html/producto.html">
             <table>
                 <tr>
                     <td><label>Nombre de Producto</label></td>
-                    <td><input required name="Nombre" type="text"><br></td>
+                    <td><input required name="nombre" type="text"></td>
                 </tr>
                 <tr>
-                    <td> <label>Descripci&oacute;n</label></td>
-                    <td>  <input required name="Descripcion" type="text"><br></td>
+                    <td><label>Descripci&oacute;n</label></td>
+                    <td><input required name="descripcion" type="text"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Herramientas</label></td>
+                    <td><input required name="l_herramientas" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Insumos</label></td>
+                    <td><input required name="l_insumos" type="text"></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>
                     <td><input required name="Subir Archivo" type="file" /></td>
                 </tr>
             </table>
-            <button onclick="goBack()">Cancelar</button>
+            <button onclick="confirmar()">Cancelar</button>
             <input type="submit" value="Guardar">
         </form>
     </fieldset>

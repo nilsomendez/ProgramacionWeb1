@@ -11,31 +11,39 @@
         /* otras propiedades */
     	}    
 	</style>
+    <script type="text/javascript">
+        function validacion(){
+            var nombre = document.f_herramienta.nombre.value;
+            var descripcion = document.f_herramienta.descripcion.value;
+            if (!isNaN(nombre) || !isNaN(descripcion)) {return false;}
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <fieldset>
-        <legend>Dar de alta Herramientas</legend>
-        <form action="../html/herramienta.html">    
+        <legend>Dar de alta Herramienta</legend>
+        <form name="f_herramienta" method="post" onsubmit="return validacion();"action="../html/herramienta.html">    
             <table>
                 <tr>
                     <td><label>Nombre de Herramienta</label></td>
-                    <td><input required name="Nombre" type="text"><br></td>
+                    <td><input required name="nombre" type="text"><br></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td>  <input required name="Descripcion" type="text"></td>
+                    <td>  <input required name="descripcion" type="text"></td>
                 </tr>
                 <tr>
                     <td><label>Cantidad</label></td>
-                    <td> <input required name="Cantidad" type="number"></td>
+                    <td> <input required name="cantidad" type="number" min="1"></td>
                 </tr>
                 <tr>
                     <td><label>Foto</label></td>
                     <td><input required name="Subir Archivo" type="file" /></td>
                 </tr>
             </table>
-            <button onclick="goBack()">Cancelar</button>
+            <button onclick="confirmar()">Cancelar</button>
             <input type="submit" value="Guardar">
         </form>
         

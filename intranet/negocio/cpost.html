@@ -9,7 +9,9 @@
         function validacion( ){
             var nombre = document.f_post.nombre.value;
             var descripcion = document.f_post.descripcion.value;
-            if ( !is_cadena_sin_numero(nombre) || !is_cadena_sin_numero(descripcion) ) { return false}
+            var grupo = document.f_post.g_trabajo.value;
+            if ( !isNaN(nombre) || !isNaN(descripcion) || !isNaN(grupo)) 
+                { return false; }
             return true;
         }
     </script>
@@ -18,15 +20,15 @@
 <body>
     <fieldset>
         <legend>Crear Post</legend>
-        <form name="f_post" method="post" onsubmit="return validacion()" action="../html/catalogo.html">
+        <form name="f_post" method="post" onsubmit="return validacion(); " action="../html/catalogo.html">
             <table>
                 <tr>
                     <td><label>Nombre de Post</label></td>
-                    <td><input name="nombre" type="text"><br></td>
+                    <td><input required name="nombre" type="text"></td>
                 </tr>
                 <tr>
                     <td> <label>Descripci&oacute;n</label></td>
-                    <td> <input width="50" name="descripcion" type="text" size="50"></td>
+                    <td> <input required width="50" name="descripcion" type="text" size="50"></td>
                 </tr>
                 <tr>
                     <td> <label>Grupo de Trabajo</label></td>

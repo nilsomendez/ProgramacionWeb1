@@ -32,11 +32,18 @@ function is_cadena_sin_numero(cad){
 	var numero = "1234567890"
 	for (var i = cad.length - 1; i >= 0; i--) {
 		if (numero.indexOf(cad.charAt(i)) != -1) {
+			alert("la cadena "+ cad +" contiene un numero");
 			return false;
 		};
 	};
 	return true;
 }
+
+function is_cadena_vacia(cad, nombre){
+	if(cad == ""){ alert("cadena vacia"); return true;}
+		return false;
+}
+
 
 
 
