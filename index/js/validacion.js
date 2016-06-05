@@ -32,3 +32,20 @@ function restaurar() {
          var aviso = document.getElementById("aviso");
          aviso.innerHTML = ""									//aca inicializamos en vacio
 }
+
+
+//funcion para validar los comentarios del catalogo
+
+function validaComentario(){
+         var texto = document.getElementById("comentario").value;
+         
+       if (texto==null || texto=="" || texto=="Escriba acá su comentario") {
+          
+           confirm("No ingresó ningún texto. Desea continuar?");
+
+         }else{
+            alert("Usted escribio " + texto);
+         }
+
+}
+
