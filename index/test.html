@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Validación para validar email, url, máximo, mínimo, etc </title>
+ <meta author="Robinson Recalde">
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+ <script src="/js/jquery-1.12.4.js"></script>
+ <script src="/js/jquery-validation.js"></script>
+ <script type="text/javascript">
+ $(function(){
+ $('#segundoForm3').validate({
+ rules :{
+ mi_email : {
+ required : true, //para validar campo vacio
+ email : true //para validar formato email
+ },
+ mi_nombre : {
+ required : true,
+ minlength : 3, //para validar campo con minimo 3 caracteres
+ maxlength : 9 //para validar campo con maximo 9 caracteres
+ },
+ mi_edad : {
+ required : true,
+ number : true //para validar campo solo numeros
+ },
+ mi_pais : {
+ required :true,
+ }
+}
+ }); 
+ });
+ </script>
+</head>
+<body>
+ <form action="post" id="segundoForm3">
+ <p>Email <input type="text" class="required" name="my_email" value=""></p>
+ <br />
+ <p>Nombre <input type="text" class="required" name="my_name" value=""></p>
+ <br />
+ <p>Edad <input type="text" class="required" name="my_age" value=""></p>
+ <br />
+ País <select class="required" name="my_country">
+ <option value="">Elegir</option>
+ <option value="1">Venezuela</option>
+ <option value="2">Colombia</option>
+ <option value="3">Ecuador</option>
+ </select>
+ <br />
+ <input type="submit" value="Enviar">
+ </form>
+</body>
+</html>

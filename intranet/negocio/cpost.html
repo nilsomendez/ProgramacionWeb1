@@ -5,44 +5,89 @@
 	<title>Post</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+
+	<link rel="stylesheet" href="css/screen.css">
+	<script src="lib/jquery.js"></script>
+	<script src="dist/jquery.validate.js"></script>
+    <!-- Codigo jQuery que aplica evento -->
     <script type="text/javascript">
-        function validacion( ){
-            var nombre = document.f_post.nombre.value;
-            var descripcion = document.f_post.descripcion.value;
-            var grupo = document.f_post.g_trabajo.value;
-            if ( !isNaN(nombre) || !isNaN(descripcion) || !isNaN(grupo)) 
-                { return false; }
-            return true;
-        }
+
+       $().ready(function(){
+           $("#f_post").validate({
+               rules: {
+                   nombre: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                   },
+                   descripcion: "required",
+                   g_trabajo: {
+                       required: true,
+                       minlength: 3
+                   }
+               },
+               messages: {
+                   nombre: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres",
+                       maxlength: "Longitud maxima 20 carácteres"
+                   },
+                   descripcion: "Campo obligatorio",
+                   g_trabajo: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres"
+                   }
+               }
+            });
+        });
     </script>
+    <style>
+        #commentForm {
+            width: 500px;
+        }
+        #commentForm label {
+            width: 250px;
+        }
+        #commentForm label.error, #commentForm input.submit {
+            margin-left: 253px;
+        }
+        #signupForm {
+            width: 670px;
+        }
+        #signupForm label.error {
+            margin-left: 10px;
+            width: auto;
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
-    <fieldset>
-        <legend>Crear Post</legend>
-        <form name="f_post" method="post" onsubmit="return validacion(); " action="../html/catalogo.html">
-            <table>
-                <tr>
-                    <td><label>Nombre de Post</label></td>
-                    <td><input required name="nombre" type="text"></td>
-                </tr>
-                <tr>
-                    <td> <label>Descripci&oacute;n</label></td>
-                    <td> <input required width="50" name="descripcion" type="text" size="50"></td>
-                </tr>
-                <tr>
-                    <td> <label>Grupo de Trabajo</label></td>
-                    <td> <input required width="50"  name="g_trabajo" type="text" size="50"></td>
-                </tr>
-                <tr>
-                    <td><label>Archivos adjuntos</label></td>
-                    <td><input required name="Subir Archivos" type="file" /></td>
-                </tr>
-            </table>
-            <button onclick="confirmar();">Cancelar</button>
-            <input type="submit" value="Guardar" >
+    <div id="main">
+        <form class="cmxform" id="f_post" method="get" action="../html/catalogo.html">
+            <fieldset>
+                <legend align="center">Crear Post</legend>
+                <p>
+                    <label for="nombre">Nombre de Post</label>
+                    <input id="nombre" name="nombre" type="text" >
+                </p> 
+                <p>
+                    <label for="descripcion">Descripci&oacute;n</label>
+                    <input name="descripcion" id="descripcion" type="text">
+                </p>
+                <p>
+                    <label for="g_trabajo" >Grupo de Trabajo</label>
+                    <textarea id="g_trabajo" name="g_trabajo"></textarea>
+                </p>
+                <p>
+                    <label for="adjuntar" >Adjuntos</label>
+                    <input id="adjuntar" type="file" />
+                </p>
+                <button onclick="confirmar();">Cancelar</button>
+                <input type="submit" value="Guardar" >
+            </fieldset>
         </form>
-    </fieldset>
+    </div>
 </body>
 
 </html>
