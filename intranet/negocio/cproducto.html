@@ -5,50 +5,91 @@
 	<title>producto</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
+    <link rel="stylesheet" href="css/miCss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <script src="lib/jquery.js"></script>
+    <script src="dist/jquery.validate.js"></script>
+
     <script type="text/javascript">
-        function validacion(){
-            var nombre = document.f_producto.nombre.value;
-            var descripcion = document.f_producto.descripcion.value;
-            var herramientas = document.f_producto.l_herramientas.value;
-            var insumos = document.f_producto.l_insumos.value;
-            if (!isNaN(nombre) || !isNaN(descripcion) ||
-                !isNaN(herramientas) || !isNaN(insumos)) 
-                {return false;}
-            return true;
-        }
+        $().ready(function(){
+            $("#f_producto").validate({
+                rules: {
+                    nombre: {
+                        required: true,
+                        minlength: 4,
+                        maxlength: 20
+                    },
+                    descripcion: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 50
+                    },
+                    l_herramientas: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 50
+                    },
+                    l_insumos: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 50
+                    }
+                },
+                messages: {
+                    nombre: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 4 carácteres",
+                       maxlength: "Longitud maxima 20 carácteres"
+                    },
+                    descripcion: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres",
+                       maxlength: "Longitud maxima 50 carácteres"
+                    },
+                    l_herramientas: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 5 carácteres",
+                       maxlength: "Longitud maxima 50 carácteres"
+                    },
+                    l_insumos: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 5 carácteres",
+                       maxlength: "Longitud maxima 50 carácteres"
+                    }
+                }
+            });
+        });
     </script>
 </head>
-
-<body>
-    <fieldset>
-        <legend>Creacion de Producto</legend>
-        <form name="f_producto" method="post" onsubmit="return validacion();" action="../html/producto.html">
-            <table>
-                <tr>
-                    <td><label>Nombre de Producto</label></td>
-                    <td><input required name="nombre" type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Descripci&oacute;n</label></td>
-                    <td><input required name="descripcion" type="text"><br></td>
-                </tr>
-                <tr>
-                    <td><label>Herramientas</label></td>
-                    <td><input required name="l_herramientas" type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Insumos</label></td>
-                    <td><input required name="l_insumos" type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Foto</label></td>
-                    <td><input required name="Subir Archivo" type="file" /></td>
-                </tr>
-            </table>
-            <button onclick="confirmar()">Cancelar</button>
-            <input type="submit" value="Guardar">
-        </form>
-    </fieldset>
-</body>
-
+    <body>
+        <div id="main">
+            <form class="cmxform" id="f_producto" method="get" action="../html/producto.html">
+                <fieldset>
+                    <legend align="center">Creacion de Producto</legend>
+                    <p>
+                        <label for="nombre">Nombre de Producto</label>
+                        <input id="nombre" name="nombre" type="text">
+                    </p>
+                    <p>
+                        <label for="descripcion">Descripci&oacute;n</label>
+                        <input id="descripcion" name="descripcion" type="text">
+                    </p>
+                    <p>
+                        <label for="l_herramientas">Herramientas</label>
+                        <textarea id="l_herramientas" name="l_herramientas" type="text"></textarea>
+                    </p>
+                    <p>
+                        <label for="l_insumos">Insumos</label>
+                        <textarea id="l_insumos" name="l_insumos" type="text"></textarea>
+                    </p>
+                    <p>
+                        <label>Foto</label>
+                        <input name="Subir Archivo" type="file">
+                    </p>
+                    <button onclick="confirmar()">Cancelar</button>
+                    <input type="submit" value="Guardar">
+                </fieldset>
+            </form>
+        </div>
+    </body>
 </html>

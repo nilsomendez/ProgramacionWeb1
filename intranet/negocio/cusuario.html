@@ -5,44 +5,111 @@
 	<title>Post</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
-    
+    <link rel="stylesheet" href="css/miCss.css">
     <link rel="stylesheet" href="css/screen.css">
 	<script src="lib/jquery.js"></script>
 	<script src="dist/jquery.validate.js"></script>
     <!-- Codigo jQuery que aplica evento -->
     <script type="text/javascript">
+        $().ready(function(){
+            $("#f_usuario").validate({
+                rules: {
+                    nombre : {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    },
+                    apellido: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    },
+                    n_usuario: {
+                        required: true,
+                        minlength: 5
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    email2:{
+                        required: true,
+                        equalTo: "#email",
+                        email: true
+                    }
+                },
+                messages: {
+                    nombre:{
+                        required: "Campo obligatorio",
+                        minlength: "Longitud minima 3 carácteres",
+                        maxlength: "Longitud maxima 20 carácteres"
+                    },
+                    apellido: {
+                        required: "Campo obligatorio",
+                        minlength: "Longitud minima 3 carácteres",
+                        maxlength: "Longitud maxima 20 carácteres" 
+                    },
+                    n_usuario: {
+                        required: "Campo obligatorio",
+                        minlength: "Longitud minima 5 carácteres"
+                    },
+                    email: {
+                        required: "Campo obligatorio",
+                        email: "Ingrese una direccion email valida"
+                    },
+                    email2: {
+                        required: "Campo obligatorio",
+                        equalTo: "El email no coincide",
+                        email: "Ingrese una direccion email valida"
+                    }
+                }
+            });
 
+            $("#n_usuario").focus(function() {
+                var firstname = $("#nombre").val();
+                var lastname = $("#apellido").val();
+                if (firstname && lastname && !this.value) {
+                    this.value = firstname + "." + lastname;
+                }
+            });
+        });
     </script>
 </head>
 
 <body>
-        <form name="f_usuario" method="get" action="../html/usuarios.html">
+    <div id="main">
+        <form class="cmxform" id="f_usuario" method="get" action="../html/usuarios.html">
             <fieldset>
-                <legend>Crear Usuario</legend>
+                <legend align="center">Crear Usuario</legend>
                 <p>
-                    <label>Nombre</label>
-                    <input required name="nombre" type="text">
+                    <label for="nombre">Nombre *</label>
+                    <input id="nombre" name="nombre" type="text">
                 </p>
                 <p>
-                    <label>Apellido</label>
-                    <input required name="apellido" type="text">
+                    <label for="apellido">Apellido *</label>
+                    <input id="apellido" name="apellido" type="text">
                 </p>
                 <p>
-                    <label>Fecha Nacimiento</label>
-                    <input required type="datetime" name="f_nacimiento" >
+                    <label for="n_usuario">Nombre de Usuario *</label>
+                    <input id="n_usuario" name="n_usuario" type="text">
                 </p>
                 <p>
-                    <label>Nombre de Usuario</label>
-                    <input required name="n_usuario" type="text">
+                    <label for="f_nacimiento">Fecha Nacimiento *</label>
+                    <input id="f_nacimiento" type="datetime" name="f_nacimiento" >
                 </p>
                 <p>
-                     <label>Correo</label>
-                     <input required type="email" name="email" type="text">
+                     <label for="email">Correo *</label>
+                     <input id="email" type="email" name="email" type="text">
+                </p>
+                <p>
+                    <label for="email2">Reingrese el Correo *</label>
+                    <input id="email2" type="email" name="email2">
                 </p>
                 <button onclick="confirmar()">Cancelar</button>
                 <input type="submit" value="Guardar" >
             </fieldset>
         </form>
+    </div>
 </body>
 
 </html>
