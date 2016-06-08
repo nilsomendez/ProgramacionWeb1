@@ -4,6 +4,60 @@
 <meta charset="UTF-8">
 <title>Busqueda Silla</title>
 <link href="../../index/css/estilo.css" rel="stylesheet" type="text/css" />
+<script src="../../intranet/negocio/lib/jquery.js"></script>
+<script src="../../intranet/negocio/dist/jquery.validate.js"></script>
+<script type="text/javascript">
+        
+       $().ready(function(){
+
+           $("#f_post").validate({
+               rules: {
+                   nombre: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20,
+
+                   },
+                   password:{
+                       required: true,
+                       minlength: 3
+                   }
+               },
+               messages: {
+                   nombre: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres",
+                       maxlength: "Longitud maxima 20 carácteres"
+                   },
+                   password : {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres"
+                       
+                   }
+               }
+            });
+        });
+
+    </script>
+<style>
+        #commentForm {
+            width: 500px;
+        }
+        #commentForm label {
+            width: 250px;
+        }
+        #commentForm label.error, #commentForm input.submit {
+            margin-left: 253px;
+        }
+        #signupForm {
+            width: 670px;
+        }
+        #signupForm label.error {
+            margin-left: 10px;
+            width: auto;
+            display: inline;
+        }
+    </style>
 </head>
 <body><center>
 <!--Incio de contenido de la pagina principal-->
@@ -16,46 +70,57 @@
 	
     <div align="center">
 
-	<h2> Cirtock Software de control de stock y tutoriales </h2>
-    <p> <a href="extranet/catalogo.html">CATALOGO</a></p>
-
-    </div>
+	<h2> SISTEMA DE CONTROL DE STOCK </h2>
     
+</div>
     </titulodelapagina>
     
    
-    <login>
+    <login><center>
     <!--formulario de login que ya tiene el efecto-->  
-	<form>
+	<form id="f_post" method="get" action="../../intranet/html/index.html"  >
 	<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
-  		<legend>Iniciar Sesion</legend>		<!--este es el titulo en donde esta en el grupo-->
- 		
-        <!--los divido en contendor para poder manipular con css-->	
+  			
+        <!--los divido en contendor para poder manipular con css-->		
         <div>									
-		  	 <label for="nombre">Usuario </label>	
- 			 <input type="text" id="nombre" />
+		  	 <label for="nombre">Nombre</label>	
+ 			 <input name="nombre" type="text" id="nombre"/>
  		</div>
+    <br>
  		<div>
- 		 	<label for="contrasena">Contraseña</label>
-  			<input type="password" id="contrasena" />
+ 		 	<label for="password">Contraseña</label>
+  			<input name="password" type="password" id="password"/>
 		 </div>
-		         <p>
-                    <input class="boton" type="submit" value="Iniciar" />
-                  </p>
-                  <p></p>
-		   		</div>
-		   		
+	   		  <div>
+                
+                <p>
+				<input type="submit" value="ingresar" >                              
+                
+                </p>
+                <p></p>
+	   		  </div>
+              <p></p>
+
 </fieldset>
+
+</form>	   
+
 </form>
 
-<!--termina el formulario-->	    
-  
+</center>
+<!--termina el formulario-->	      
     </login>
+
+  
+         <p> <a href="../../extranet/catalogo.html">CATALOGO</a></p>
   </header>
 
 </div>
 
-<br/><br>
+<br/>
+<br/>
+<br>
+<br>
 	<center><iframe width="560" height="315" src="https://www.youtube.com/embed/45yOt0Ocswo" frameborder="0" allowfullscreen></iframe></center>
 	
 	<!--tabla donde se van a mostrar las herramientas y los insumos-->

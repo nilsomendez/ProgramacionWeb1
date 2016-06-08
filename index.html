@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <title>Pagina Principal</title>
     <link href="index/css/estilo.css" rel="stylesheet" type="text/css">
-    <script language="JavaScript" src="index/js/validacion.js"></script>
-  </head>
+    <script src="intranet/negocio/lib/jquery.js"></script>
+<script src="intranet/negocio/dist/jquery.validate.js"></script>
+<script type="text/javascript">
+        
+       $().ready(function(){
+
+           $("#f_post").validate({
+               rules: {
+                   nombre: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20,
+
+                   },
+                   password:{
+                       required: true,
+                       minlength: 3
+                   }
+               },
+               messages: {
+                   nombre: {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres",
+                       maxlength: "Longitud maxima 20 carácteres"
+                   },
+                   password : {
+                       required: "Campo obligatorio",
+                       minlength: "Longitud minima 3 carácteres"
+                       
+                   }
+               }
+            });
+        });
+
+    </script>
+<style>
+        #commentForm {
+            width: 500px;
+        }
+        #commentForm label {
+            width: 250px;
+        }
+        #commentForm label.error, #commentForm input.submit {
+            margin-left: 253px;
+        }
+        #signupForm {
+            width: 670px;
+        }
+        #signupForm label.error {
+            margin-left: 10px;
+            width: auto;
+            display: inline;
+        }
+    </style>
+      </head>
 <body><center>
 <!--Incio de contenido de la pagina principal-->
 <div class="etiquetaGenral">
@@ -21,25 +74,34 @@
    
     <login><center>
     <!--formulario de login que ya tiene el efecto-->  
-  	<form action="intranet/html/index.html" name="login" onsubmit="return comprobar()" method="post">
-    	<fieldset>				<!-- agrupa en un cuadro tendra color pero eso esta en css-->
-      	<div>									
-				<label for="nombre">Nombre</label>	
-				<input name="nombre" type="text" id="nombre" onfocus="restaurar()"/>
- 			</div>
- 			<div>
- 		 		<label for="contrasena">Contraseña</label>
-  				<input name="password" type="password" id="contrasena" onfocus="restaurar()" />
-			</div>
-			<div>
-				<p>
-					<input type="submit" value="ingresar" >                              
-				</p>
-				<p></p>
-			</div>
-			<p id="aviso"></p>
-		</fieldset>
-	</form>
+  <form id="f_post" method="get" action="intranet/html/index.html">
+    <fieldset>        <!-- agrupa en un cuadro tendra color pero eso esta en css-->
+        
+        <!--los divido en contendor para poder manipular con css-->   
+        <div>                 
+         <label for="nombre">Nombre</label> 
+       <input name="nombre" type="text" id="nombre"/>
+    </div>
+    <br>
+    <div>
+      <label for="password">Contraseña</label>
+        <input name="password" type="password" id="password"/>
+     </div>
+          <div>
+                
+                <p>
+        <input type="submit" value="ingresar" >                              
+                
+                </p>
+                <p></p>
+          </div>
+              <p></p>
+
+</fieldset>
+
+</form>    
+
+</form>       
 </center>
 <!--termina el formulario-->	      
     </login>
@@ -47,10 +109,10 @@
   
          <p> <a href="extranet/catalogo.html">CATALOGO</a></p>
   </header>
-
+<br>
+<br>
 <!---seccion donde se modificara su contenido-->
   <article class="contenidodelarticulo" id="contenidodelarticulo" align="">
-    
     <div class="titulodelaBusqueda" id="busqueda"> REALIZAR BUSQUEDA</div>
     <p></p>
 		<!--declaro un contenedor donde estara las tablas dentro sirve para dar color a traves de css-->    
