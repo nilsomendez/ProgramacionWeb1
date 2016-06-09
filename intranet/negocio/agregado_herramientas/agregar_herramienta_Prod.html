@@ -4,16 +4,21 @@
 <head>
 	<title>producto</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <link rel="stylesheet" href="../css/screen.css">
     <script language="JavaScript" src="miJavaScript.js"></script>
-	<script src="../lib/jquery-1.9.1.js"></script>
-	<style>
-		body{width:600px;margin:0 auto;overflow-x:hiden;}
+	<script src="../../../index/js/validacion/lib/jquery-1.9.1.js"></script>
+	<style>	
+		
 		select{width:180px;margin:0 0 50px 0;border:1px solid #ccc;padding:10px;border-radius:10px 0 0 10px;}
-		.clear{clear:both;text-align:center}
-		div{float:left;width:200px;text-align:center}
+		.clear{clear:both;text-align:center;}
+		div{float:left;width:200px;text-align:center;}
 		input {margin:25px 1px 0 1px;border:1px solid #ccc;padding:10px;}
-		.izq{border-radius:10px 0 0 10px;}
-		.der{border-radius:0 10px 10px 0;}
+		.izq{border-radius:10px 0 0 10px;
+			float: left;
+		}
+		.der{border-radius:0 10px 10px 0;
+			float: right;
+		}
 	</style>
 
 </head>
@@ -30,7 +35,7 @@
                         <label for="descripcion">Descripci&oacute;n</label>
                         <input id="descripcion" name="descripcion" type="text" disabled>
                     </p>
-                    <p>
+                    <div>
                     	<label for="descripcion">Herramientas</label>
 						<div>
 							<select name="origen[]" id="origen" multiple="multiple" size="8">
@@ -41,6 +46,7 @@
 								<option value="5">Taladro</option>
 							</select>
 						</div>
+                    
 						<div>
 							<input type="button" class="pasar izq" value="Pasar &raquo;"><input type="button" class="quitar der" value="&laquo; Quitar"><br />
 							<input type="button" class="pasartodos izq" value="Todos &raquo;"><input type="button" class="quitartodos der" value="&laquo; Todos">
@@ -58,14 +64,10 @@
 								$('.submit').click(function() { $('#destino option').prop('selected', 'selected'); });
 							}); 
 						</script>
-					</p>
-                    <p>
-                        <label>Foto</label>
-                        <input name="Subir Archivo" type="file">
-                    </p>
-                    <button onclick="confirmar()">Cancelar</button>
-                    <input type="submit" value="Guardar">
+					</div>
                 </fieldset>
+            	<button onclick="confirmar()">Cancelar</button>
+                <input type="submit" value="Guardar">
             </form>
         </div>
     </body>
