@@ -97,6 +97,18 @@ div#tablaconfotos{
 	font-size:22px;
 }
 
+.tablacatalogos{
+
+	margin-left: 5cm;
+
+}
+
+.tablacomentarios{
+ border:1px solid black;
+    width:50%;
+    float:right;
+   display: block;
+}
 /*estilo de pi */
 .piepagina {
 	padding-top:20px;
