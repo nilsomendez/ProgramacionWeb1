@@ -4,56 +4,61 @@
 <head>
 	<title>producto</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-        <link rel="stylesheet" href="../css/screen.css">
-    <script language="JavaScript" src="miJavaScript.js"></script>
+        <!--<link rel="stylesheet" href="../css/screen.css">-->
+    <script language="JavaScript" src="miJavaScript.js"></scri1pt>
 	<script src="../../../index/js/validacion/lib/jquery-1.9.1.js"></script>
 	<style>	
 		
 		select{width:180px;margin:0 0 50px 0;border:1px solid #ccc;padding:10px;border-radius:10px 0 0 10px;}
-		.clear{clear:both;text-align:center;}
-		div{float:left;width:200px;text-align:center;}
 		input {margin:25px 1px 0 1px;border:1px solid #ccc;padding:10px;}
-		.izq{border-radius:10px 0 0 10px;
-			float: left;
+
+		.padre {
+		  /* IMPORTANTE */
+		  text-align: center;
 		}
-		.der{border-radius:0 10px 10px 0;
-			float: right;
+
+		.hijo {
+		  padding: 10px;
+		  margin: 10px;
+		  
+		  /* IMPORTANTE */
+		  display: inline-block;
 		}
 	</style>
 
 </head>
-    <body>
-        <div id="main">
+    <body class="center">
             <form class="cmxform" id="f_producto" method="get" action="../html/producto.html">
-                <fieldset>
+                <!--<fieldset>-->
                     <legend align="center">Creacion de Producto</legend>
                     <p>
                         <label for="nombre">Nombre de Producto</label>
-                        <input id="nombre" name="nombre" type="text" disabled>
+                        <input id="nombre" name="nombre" type="text" value="Silla" disabled>
                     </p>
                     <p>
                         <label for="descripcion">Descripci&oacute;n</label>
                         <input id="descripcion" name="descripcion" type="text" disabled>
                     </p>
-                    <div>
-                    	<label for="descripcion">Herramientas</label>
-						<div>
+                    <div class="padre">
+						<div class="hijo">
 							<select name="origen[]" id="origen" multiple="multiple" size="8">
 								<option value="1">Martillo</option>
 								<option value="2">Pinza</option>
 								<option value="3">Destornillador</option>
-								<option value="4">Cerrucho</option>
+								<option value="4">serrucho</option>
 								<option value="5">Taladro</option>
 							</select>
 						</div>
                     
-						<div>
+						<div class="hijo">
 							<input type="button" class="pasar izq" value="Pasar &raquo;"><input type="button" class="quitar der" value="&laquo; Quitar"><br />
 							<input type="button" class="pasartodos izq" value="Todos &raquo;"><input type="button" class="quitartodos der" value="&laquo; Todos">
-						</div>
-						<div class="">
+						</div class="hijo">
+
+						<div class="hijo">
 							<select name="destino[]" id="destino" multiple="multiple" size="8"></select>
 						</div>
+                        
 						<script type="text/javascript">
 							$().ready(function() 
 							{
@@ -65,10 +70,6 @@
 							}); 
 						</script>
 					</div>
-                </fieldset>
-            	<button onclick="confirmar()">Cancelar</button>
-                <input type="submit" value="Guardar">
             </form>
-        </div>
     </body>
 </html>
