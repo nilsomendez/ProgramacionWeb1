@@ -1,75 +1,112 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<title>producto</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-        <!--<link rel="stylesheet" href="../css/screen.css">-->
-    <script language="JavaScript" src="miJavaScript.js"></scri1pt>
-	<script src="../../../index/js/validacion/lib/jquery-1.9.1.js"></script>
-	<style>	
+	<head>
+	
+		<title>producto</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		
-		select{width:180px;margin:0 0 50px 0;border:1px solid #ccc;padding:10px;border-radius:10px 0 0 10px;}
-		input {margin:25px 1px 0 1px;border:1px solid #ccc;padding:10px;}
+		<!--<link rel="stylesheet" href="../css/screen.css">-->
+		<script language="JavaScript" src="../miJavaScript.js"></script>
+		<script src="../../../index/js/validacion/lib/jquery-1.9.1.js"></script>
+	
+		<style>	
+			select{width:180px;margin:0 0 50px 0;border:1px solid #ccc;padding:10px;border-radius:10px 0 0 10px;}
+			.clear{clear:both;text-align:center;}
+			div{float:left;width:200px;text-align:center;}
+			input {border:1px solid #aaa;padding:5px;}
 
-		.padre {
-		  /* IMPORTANTE */
-		  text-align: center;
-		}
+			body#centrarlo{
+			  margin-left: 20%;
+				margin-right: 20%;
+			}
 
-		.hijo {
-		  padding: 10px;
-		  margin: 10px;
-		  
-		  /* IMPORTANTE */
-		  display: inline-block;
-		}
-	</style>
+.Container {
+width:705px;
+}
+.number1 {
+width: 33.3%;
+float:left;
+z-index:1;
+}
+ 
+.number2 {
+width: 33.3%;
+float:left;
+}
+ 
+.number3 {
+width: 33.3%;
+float:right;
+}
+			#padre {
+		
+				float: left;
+				margin-left: 20px;
+				width: 350px;
+			}
+			#cuadro {
+				float: right;
+				margin-top: 182px;
+				margin-right: 20px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+			}
+			#menu {
+				
+				width: 50px;
+				margin-top: -220px;
+				margin-left: 280px;
+				margin-right: 0px;
+				margin-bottom: 0px;
+				float: left;
+			
+			}
+		</style>
+		<script type="text/javascript">
+			$().ready(function() 
+			{
+				$('.pasar').click(function() { return !$('#origen option:selected').remove().appendTo('#destino'); });  
+				$('.quitar').click(function() { return !$('#destino option:selected').remove().appendTo('#origen'); });
+				$('.submit').click(function() { $('#destino option').prop('selected', 'selected'); });
+			});
+		</script>
+	</head>
+    <body id="centrarlo">
+		<form class="cmxform" id="main" method="get" action="../html/producto.html">
+		  <fieldset>
+		  <legend align="center">Creacion de Producto</legend>
+			<div>
+		        <label for="nombre2">Nombre de Producto</label>
+		        <input id="nombre2" name="nombre" type="text" disabled>
+		  	</div>
+		  	<div>
+		        <label for="descripcion">Descripci&oacute;n</label>
+		        <input id="descripcion" name="descripcion" type="text" disabled>
+		  	</div>
 
-</head>
-    <body class="center">
-            <form class="cmxform" id="f_producto" method="get" action="../html/producto.html">
-                <!--<fieldset>-->
-                    <legend align="center">Creacion de Producto</legend>
-                    <p>
-                        <label for="nombre">Nombre de Producto</label>
-                        <input id="nombre" name="nombre" type="text" value="Silla" disabled>
-                    </p>
-                    <p>
-                        <label for="descripcion">Descripci&oacute;n</label>
-                        <input id="descripcion" name="descripcion" type="text" disabled>
-                    </p>
-                    <div class="padre">
-						<div class="hijo">
-							<select name="origen[]" id="origen" multiple="multiple" size="8">
-								<option value="1">Martillo</option>
-								<option value="2">Pinza</option>
-								<option value="3">Destornillador</option>
-								<option value="4">serrucho</option>
-								<option value="5">Taladro</option>
-							</select>
-						</div>
-                    
-						<div class="hijo">
-							<input type="button" class="pasar izq" value="Pasar &raquo;"><input type="button" class="quitar der" value="&laquo; Quitar"><br />
-							<input type="button" class="pasartodos izq" value="Todos &raquo;"><input type="button" class="quitartodos der" value="&laquo; Todos">
-						</div class="hijo">
+			<div class="Container">
+			  	<div class="number1">
+				    <select name="origen[]" id="origen" multiple="multiple" size="8">
+						<option value="1">Martillo</option>
+						<option value="2">Pinza</option>
+						<option value="3">Destornillador</option>
+						<option value="4">serrucho</option>
+						<option value="5">Taladro</option>
+				    </select>
+			   </div>
+			  	<div class="number2">
+					<input type="button" class="pasar izq" value="Pasar &raquo;">
+					<input type="button" class="quitar der" value="&laquo; Quitar">
+			  	</div>
+			  	<div class="number3">
+					<select name="destino[]" id="destino" multiple="multiple" size="8"></select>
+				</div>
+			</div>
+			<div>
+				<input type="button" onclick="confirmar()" value="Cancelar">
+				<input type="submit" value="Guardar">
+			</div>
+		</form>			
 
-						<div class="hijo">
-							<select name="destino[]" id="destino" multiple="multiple" size="8"></select>
-						</div>
-                        
-						<script type="text/javascript">
-							$().ready(function() 
-							{
-								$('.pasar').click(function() { return !$('#origen option:selected').remove().appendTo('#destino'); });  
-								$('.quitar').click(function() { return !$('#destino option:selected').remove().appendTo('#origen'); });
-								$('.pasartodos').click(function() { $('#origen option').each(function() { $(this).remove().appendTo('#destino'); }); });
-								$('.quitartodos').click(function() { $('#destino option').each(function() { $(this).remove().appendTo('#origen'); }); });
-								$('.submit').click(function() { $('#destino option').prop('selected', 'selected'); });
-							}); 
-						</script>
-					</div>
-            </form>
     </body>
 </html>

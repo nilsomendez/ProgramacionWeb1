@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>titulo</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+		<style type="text/css">
+			/* escritorio grande */
+			@media (min-width: 1200px) {
+				body {color: red;}
+			}
+			/* escritorio pequeño o tablet */
+			@media (min-width: 768px) and (max-width: 979px) {
+				body {color: green;}
+			}
+			/* tablet o Smartphone */
+			@media (min-width: 767px) {
+				body {color: blue;}
+			}
+			/* Smartphone */
+			@media (max-width: 480px) {
+				body {color: yellow;}
+			}
+		</style>
+		<script type="text/javascript">
+			$().ready(function() 
+			{
+				$('.pasar').click(function() { return !$('#origen option:selected').remove().appendTo('#destino'); });  
+				$('.quitar').click(function() { return !$('#destino option:selected').remove().appendTo('#origen'); });
+				$('.submit').click(function() { $('#destino option').prop('selected', 'selected'); });
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="well">
+						<h4 class="text-center">Agregado de Herramientas</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<form>
+						<legend>Producto</legend>
+
+						<label for="nombre2">Nombre de Producto</label>
+						<input id="nombre2" name="nombre" type="text" value="Mesa" disabled>
+
+						<label for="descripcion">Descripci&oacute;n</label>
+						<input id="descripcion" name="descripcion" type="text" value="mesa de madera de alamo" disabled>
+
+						<legend>Herramientas</legend>
+
+					</form>
+				</div>
+				<div class="span6">
+					
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="span3">
+					    <select name="origen[]" id="origen" multiple="multiple" size="8">
+							<option value="1">Martillo</option>
+							<option value="2">Pinza</option>
+							<option value="3">Destornillador</option>
+							<option value="4">serrucho</option>
+							<option value="5">Taladro</option>
+					    </select>
+					</div>
+					<div class="span2">
+						<div class="row-fluid">
+							<br><br><br>
+								<input type="button" class="pasar izq" value="Pasar &raquo;">
+								<input type="button" class="quitar der" value="&laquo; Quitar">
+							<br><br><br>
+						</div>
+					</div>
+					<div class="span2">
+						<select name="destino[]" id="destino" multiple="multiple" size="8"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="text-center">
+			<div class="row-fluid">
+				<div class="span12">
+					<a href="" class="btn btn-inverse">Guardar</a>
+					<input class="btn btn-inverse" type="button" onclick="confirmar()" value="Cancelar">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
