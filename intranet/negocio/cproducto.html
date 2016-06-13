@@ -6,7 +6,15 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script language="JavaScript" src="miJavaScript.js"></script>
     
-    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" type="text/css" href="../../index/bootstrap/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../index/bootstrap/css/bootstrap-responsive.css">
+    <style type="text/css">
+        label.error {
+            color: red;
+        }
+    </style>
+
     <script src="../../index/js/validacion/lib/jquery.js"></script>
     <script src="../../index/js/validacion/dist/jquery.validate.js"></script>
 
@@ -62,32 +70,34 @@
     </script>
 </head>
     <body>
-        <div id="main">
-            <form class="cmxform" id="f_producto" method="get" action="../html/producto.html">
-                <fieldset>
-                    <legend align="center">Creacion de Producto</legend>
-                    <p>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span4">
+                <legend align="center">Creacion de Producto</legend>
+                <form class="form-horizontal" role="form" id="f_producto" method="get" action="../html/producto.html">
+                    <div class="form-group">
                         <label for="nombre">Nombre de Producto</label>
                         <input id="nombre" name="nombre" type="text">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="descripcion">Descripci&oacute;n</label>
                         <input id="descripcion" name="descripcion" type="text">
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="l_herramientas">Herramientas</label>
                         <textarea id="l_herramientas" name="l_herramientas" type="text"></textarea>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label for="l_insumos">Insumos</label>
                         <textarea id="l_insumos" name="l_insumos" type="text"></textarea>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <label>Foto</label>
                         <input name="Subir Archivo" type="file">
-                    </p>
+                    </div>
+                    <br><br>
                     <button onclick="confirmar()">Cancelar</button>
-                    <input type="submit" value="Guardar">
+                    <input type="submit" class="btn btn-info" value="Guardar">
                 </fieldset>
             </form>
         </div>
