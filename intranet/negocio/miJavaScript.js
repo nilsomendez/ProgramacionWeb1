@@ -1,56 +1,32 @@
 function goBack() {
 	window.history.go(-1);
 }
-
 function guardado(){
 	alert("Guardado...");
 }
-
 function modificado() {
 	alert("Modificado...");
 }
-
 function confirmar()
 {
     if (confirm("Se perderan todos los nuevos datos\n¿desea continuar?")) {
         goBack();
     }
 }
-
-function is_numero_positivo(num){
-	if (!isNaN(num)) {
-		return false;
-	} else {
-		if(parseInt(num) <= 0){
-			return false;
-		}
-	}
-	return true;
+function eliminado(){
+	alert("Eliminado...");
 }
 
-function is_cadena_sin_numero(cad){
-	var numero = "1234567890"
-	for (var i = cad.length - 1; i >= 0; i--) {
-		if (numero.indexOf(cad.charAt(i)) != -1) {
-			alert("la cadena "+ cad +" contiene un numero");
-			return false;
-		};
-	};
-	return true;
-}
-
-function is_cadena_vacia(cad, nombre){
+function is_cadena_vacia(cad){
 	if(cad == ""){ alert("cadena vacia"); return true;}
 		return false;
 }
+function eliminar(){
+	if (confirm("Se eliminara el elemento")) {
+		eliminado();
+	}
+}
 
-
-
-
- //   isNaN(15) devolverá falso
- //  isNaN(15p) devolverá verdadero
- //   isNaN(15 12) devolverá verdadero, hay un espacio en blanco
- //   isNaN(3.141592) devolverá falso
- //   isNaN(“23”) devolverá falso, puede ser convertido a un valor numérico
-
-
+function enviar_contrasenia(){
+	alert("Contraseña enviada al email");
+}

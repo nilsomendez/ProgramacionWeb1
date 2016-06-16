@@ -84,19 +84,13 @@
                         <input id="descripcion" name="descripcion" type="text">
                     </div>
                     <div class="form-group">
-                        <label for="l_herramientas">Herramientas</label>
-                        <textarea id="l_herramientas" name="l_herramientas" type="text"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="l_insumos">Insumos</label>
-                        <textarea id="l_insumos" name="l_insumos" type="text"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Foto</label>
-                        <input name="Subir Archivo" type="file">
+                        <label>Adjunto</label>
+                        <label class="btn btn-info btn-file">
+                            Examinar<input type="file" style="display: none;">
+                        </label>
                     </div>
                     <br><br>
-                    <button onclick="confirmar()">Cancelar</button>
+                    <button class="btn btn-info" onclick="confirmar()">Cancelar</button>
                     <input type="submit" class="btn btn-info" value="Guardar">
                 </fieldset>
             </form>
